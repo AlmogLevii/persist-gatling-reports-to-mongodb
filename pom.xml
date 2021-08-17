@@ -6,19 +6,25 @@
 
     <groupId>org.example</groupId>
     <artifactId>persistGatlingReportsToMongodb</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <version.org.mongodb>4.3.0</version.org.mongodb>
+        <version.json.simple>1.1.1</version.json.simple>
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>com.googlecode.json-simple</groupId>
             <artifactId>json-simple</artifactId>
-            <version>1.1.1</version>
+            <version>${version.json.simple}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-sync</artifactId>
+            <version>${version.org.mongodb}</version>
         </dependency>
     </dependencies>
 
