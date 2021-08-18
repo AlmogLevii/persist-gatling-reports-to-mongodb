@@ -1,3 +1,12 @@
+import com.mongodb.BasicDBObject;
+import com.mongodb.MongoClientSettings;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.internal.MongoClientImpl;
+import com.mongodb.client.result.InsertOneResult;
+import org.bson.Document;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
@@ -8,6 +17,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
+import static com.mongodb.client.model.Filters.eq;
+
 //TODO:
 //1. find a way to get the pathToTarget dynamically
 //2. add the program to the yaml file that Lokesh created
@@ -17,6 +28,7 @@ public class Main {
 
     public static final String GATLING_FILE_PATH_ENV = "GATLING_BASE_FILE_PATH";
     public static final String gatlingBasePath = getGatlingBasePath();
+    static String uri = "mongodb://0.0.0.0:27017";
 
     public static void main(String[] args) {
 
@@ -39,6 +51,20 @@ public class Main {
 
             RequestsGroup failedRequests = new RequestsGroup(jsonObject.get("group4"));
             SuccessfulRequests successfulRequests = new SuccessfulRequests(jsonObject);
+
+
+            MongoClient mongoClient = MongoClients.create(uri);
+            MongoDatabase db = mongoClient.getDatabase("example");
+
+            db.createCollection("testCollection");
+
+            MongoCollection<Document> testCollection = db.getCollection("testCollection");
+            Document doc = new Document("gatling result", jsonObject);
+            InsertOneResult insertOneResult = testCollection.insertOne(doc);
+
+            System.out.println(insertOneResult);
+
+            mongoClient.close();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -70,3 +96,5 @@ public class Main {
     }
 
 }
+
+
