@@ -1,6 +1,6 @@
 # persist-gatling-reports-to-mongodb
 
-### Motivation
+### Motivation 💡
 
 Simple java program that will persist gatling test statistic data to mongodb. Intention of this
 program is to use as a InitContainer in https://github.com/RHEcosystemAppEng/kogito-benchmark/blob/main/test/open-shift/pod-kogito-gatling-benchmark.yaml
@@ -10,8 +10,11 @@ program is to use as a InitContainer in https://github.com/RHEcosystemAppEng/kog
 Following environment variables are required to set before running program.
 
 | Environment variable        | Description  | Example value  |
-| ------------- |:-------------:| :-----|
-| `GATLING_BASE_FILE_PATH`      | file path where gatling test results generated. | /Users/jnirosha/kogito-benchmark/test/target/gatling |
+| ------------- |:-------------| :-----|
+| `GATLING_FILE_PATH_ENV`      | file path where gatling test results generated. | `/Users/jnirosha/kogito-benchmark/test/target/gatling` |
+| `MONGODB_CONNECTION_URI`      | connection string to mongodb that will be used to persist gatling results. | `mongodb://127.0.0.0:27017` |
+| `MONGODB_NAME`      | mongodb database name | `gatling_results` |
+| `MONGODB_COLLECTION_NAME`      | mongodb collection name | `statistic_reports` |
 
 ### How to run 🏃
 
