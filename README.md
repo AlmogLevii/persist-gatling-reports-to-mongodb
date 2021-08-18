@@ -1,4 +1,4 @@
-##persist-gatling-reports-to-mongodb
+# persist-gatling-reports-to-mongodb
 
 ### Motivation
 
