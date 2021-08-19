@@ -12,9 +12,9 @@ Following environment variables are required to set before running program.
 | Environment variable        | Description  | Example value  |
 | ------------- |:-------------| :-----|
 | `GATLING_FILE_PATH_ENV`      | file path where gatling test results generated. | `/Users/jnirosha/kogito-benchmark/test/target/gatling` |
-| `MONGODB_CONNECTION_URI`      | connection string to mongodb that will be used to persist gatling results. | `mongodb://127.0.0.0:27017` |
-| `MONGODB_NAME`      | mongodb database name | `gatling_results` |
-| `MONGODB_COLLECTION_NAME`      | mongodb collection name | `statistic_reports` |
+| `MONGODB_CONNECTION_URI`      | connection string to mongodb that will be used to persist gatling results. | `mongodb://localhost:27017` |
+| `MONGODB_NAME`      | mongodb database name | `Kogito_db` |
+| `MONGODB_COLLECTION_NAME`      | mongodb collection name | `benchmark_results` |
 
 ### How to run 🏃
 
