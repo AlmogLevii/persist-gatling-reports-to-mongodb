@@ -85,7 +85,6 @@ public class Main {
 
     private static String getLastSimulationId() {
         String lastRunFilePath = GATLING_FILE_PATH + File.separator + "lastRun.txt";
-
         try (Stream<String> fileContentLines = Files.lines(Paths.get(lastRunFilePath))) {
             return fileContentLines.findFirst()
                     .orElseThrow(() -> new RuntimeException("lastRun.txt file is empty!"));
