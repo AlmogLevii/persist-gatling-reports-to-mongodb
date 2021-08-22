@@ -39,6 +39,7 @@ public class Main {
     public static void main(String[] args) {
 
         try (FileReader reader = new FileReader(getStatisticFilePath())) {
+            LOGGER.info("path to the json file: " + getStatisticFilePath());
             final JSONParser parser = new JSONParser();
             final JSONObject jsonObject = (JSONObject) parser.parse(reader);
 
