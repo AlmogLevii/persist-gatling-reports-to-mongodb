@@ -12,11 +12,15 @@ Following environment variables are required to set before running program.
 | Environment variable        | Description  | Example value  |
 | ------------- |:-------------| :-----|
 | `GATLING_FILE_PATH_ENV`      | file path where gatling test results generated. | `/Users/jnirosha/kogito-benchmark/test/target/gatling` |
-| `MONGODB_CONNECTION_URI`      | connection string to mongodb that will be used to persist gatling results. | `mongodb://localhost:27017` |
+| `MONGODB_CONNECTION_URI`      | connection string to mongodb that will be used to persist gatling results. | `mongodb://10.88.0.1:27017` |
 | `MONGODB_NAME`      | mongodb database name | `Kogito_db` |
 | `MONGODB_COLLECTION_NAME`      | mongodb collection name | `benchmark_results` |
 
-### How to run 🏃
+### How to run locally 🏃
 
 1. Set all above mentioned environment variables.
-2. execute the program using `java -jar target/persistGatlingReportsToMongodb-1.0-SNAPSHOT.jar`command.
+2. execute the program using `java -jar target/persistGatlingReportsToMongodb-1.0.0-jar-with-dependencies.jar`command.
+
+### How to run as a container
+
+execute `podman pull quay.io/almoglevi0/persist-gatling-reports-to-mongodb`
