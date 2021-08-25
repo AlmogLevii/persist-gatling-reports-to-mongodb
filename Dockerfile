@@ -1,4 +1,4 @@
-FROM quay.io/lrangine/maven:3.8-adoptopenjdk-11 as dev
+FROM registry.access.redhat.com/ubi8/openjdk-11
 
 WORKDIR /usr/app
 
